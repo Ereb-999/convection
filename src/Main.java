@@ -79,9 +79,13 @@ public class Main {
         }
         if (two > one && two > three) {
             System.out.println("Число " + two + " наибольшее среди трёх чисел.");
-        }
-        if (three > one && three > two) {
-            System.out.println("Число " + three + " наибольшее среди трёх чисел.");
+            if (three > one && three > two) {
+                System.out.println("Число " + three + " наибольшее среди трёх чисел.");
+            }
+        } else {
+            if (three > one && three > two) {
+                System.out.println("Число " + three + " наибольшее среди трёх чисел.");
+            }
         }
     }
 }
