@@ -22,10 +22,10 @@ public class Main {
         }
 
         short ageHuman = 30;
-        if (ageHuman > 2 && ageHuman < 6) {
+        if (ageHuman >= 2 && ageHuman <= 6) {
             System.out.println("Если возраст человека равен " + ageHuman + ", то ему нужно ходить в дедский сад.");
         }
-        if (ageHuman > 7 && ageHuman < 17) {
+        if (ageHuman >= 7 && ageHuman <=17) {
             System.out.println("Если возраст человека равен " + ageHuman + ", то ему нужно ходить в школу.");
         }
         if (ageHuman >= 18 && ageHuman <= 24) {
@@ -36,7 +36,7 @@ public class Main {
         }
 
         short ageChild = 10;
-        if (ageChild < 5 && ageChild < 14) {
+        if (ageChild > 5 && ageChild < 14) {
             System.out.println("Если возраст равен " + ageChild + ", то ему нельзя кататься на атракионе.");
         }
         if (ageChild >= 14) {
@@ -47,15 +47,11 @@ public class Main {
         short seats = 102;
         short seatsSedentary = 60;
         short place = 40;
-        if (place <60) {
+        if (place < seatsSedentary) {
             System.out.println("Сидячих мест в вагоне " + (seatsSedentary - place) + ", а стоячих " + (seats - seatsSedentary));
-        } else if (place >= 60 && place < 102) {
+        } else if (place >= seatsSedentary && place < seats) {
             System.out.println("Стоячих мест в вагоне: " + place);
-        }else {
-            System.out.println("Мест нет, жди следующий траснпорт!");
         }
-
-
 
 
         short one = 10;
@@ -66,31 +62,30 @@ public class Main {
         }
         if (two > one && two > three) {
             System.out.println("Число " + two + " наибольшее среди трёх чисел.");
-            if (three > one && three > two) {
-                System.out.println("Число " + three + " наибольшее среди трёх чисел.");
-            }
-        } else {
-            if (three > one && three > two) {
-                System.out.println("Число " + three + " наибольшее среди трёх чисел.");
-            }
+        }
+        if (three > one && three > two) {
+            System.out.println("Число " + three + " наибольшее среди трёх чисел.");
         }
 
         short clientOS = 1;
         short clientDeviceYear = 2013;
         if (clientOS == 1 && clientDeviceYear > 2015) {
             System.out.println("Установите версию приложения для Android по ссылке.");
-                if (clientOS == 0 && clientDeviceYear > 2015 ) {
-                    System.out.println("Установите версию приложения для iOS по ссылке.");
-                }
-        } else {
-            System.out.println("Установите облегченную версию приложения для Android по ссылке ");
-                if (clientOS== 0 && clientDeviceYear < 2015) {
-                    System.out.println("Установите облегченную версию приложения для iOS по ссылке");
-            }
         }
 
+        if (clientOS == 0 && clientDeviceYear > 2015) {
+            System.out.println("Установите версию приложения для iOS по ссылке.");
+        }
+        if (clientOS == 1 && clientDeviceYear < 2015){
+            System.out.println("Установите облегченную версию приложения для Android по ссылке ");
+        }
+        if (clientOS == 0 && clientDeviceYear < 2015) {
+                    System.out.println("Установите облегченную версию приложения для iOS по ссылке");
+        }
+
+
         short year = 2040;
-        if ((year > 1584) && (year %4 == 0) && (year %100 != 0) && (year %400 == 0)) {
+        if (year > 1584 && year % 4 == 0 && year % 100 != 0 || year % 400 == 0) {
             System.out.println(year + " - год являеться високостным.");
         } else {
             System.out.println(year + " - год не являеться високостным.");
